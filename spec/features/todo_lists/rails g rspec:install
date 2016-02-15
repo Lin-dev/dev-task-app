@@ -1,0 +1,4 @@
+rails g rspec:install
+delete the test folder (minitests)
+mkdir -p spec/features/todo_lists
+touch spec/features/todo_lists/create_spec.rb
