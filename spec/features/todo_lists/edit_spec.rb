@@ -35,6 +35,9 @@ describe "Editing todo lists" do
 
   it "displays an error when the todo list has no title" do
     update_todo_list todo_list: todo_list, title: ""
+    title = todo_list.title
+    todo_list.reload
+    expect(todo_list.title).to eq(title)
     expect(page).to have_content("error")
   end
 
@@ -45,6 +48,11 @@ describe "Editing todo lists" do
 
   it "displays an error when the description has less than 3 characters" do
     update_todo_list todo_list: todo_list, description: "ok"
+    expect(page).to have_content("error")
+  end
+
+  it "displays an error when the title has less than 3 characters" do
+    update_todo_list todo_list: todo_list, title: "ok"
     expect(page).to have_content("error")
   end
 
