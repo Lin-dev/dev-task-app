@@ -11,13 +11,13 @@ class TodoItemsController < ApplicationController
   def create
     @todo_list = TodoList.find(params[:todo_list_id])
     @todo_item = @todo_list.todo_items.new(todo_item_params)
-  end
-  if @todo_item.save
-    flash[:success] = "Added todo list item"
-    redirect_to todo_list_todo_items_path
-  else
-    flash[:error] = "Something went wrong..."
-    render action: :new
+    if @todo_item.save
+      flash[:success] = "Added todo list item"
+      redirect_to todo_list_todo_items_path
+    else
+      flash[:error] = "Something went wrong..."
+      render action: :new
+    end
   end
   private
   def todo_item_params
