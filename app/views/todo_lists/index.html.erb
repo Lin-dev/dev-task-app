@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>To do list</h1>
 
-<<<<<<< HEAD
 <table>
   <thead>
     <tr>
@@ -20,30 +20,11 @@
         <td><%= link_to 'Show', todo_list %></td>
         <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
         <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-=======
-<div id="page-content">
-  <h1>To do list</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th colspan="3"></th>
->>>>>>> 72776e33718db9966e137f969074f30baea568ad
       </tr>
-    </thead>
+    <% end %>
+  </tbody>
+</table>
 
-    <tbody>
-      <% @todo_lists.each do |todo_list| %>
-        <tr id="<%= dom_id(todo_list)%>">
-          <td><%= todo_list.title %></td>
-          <td><%= todo_list.description %></td>
-          <td><%= link_to 'Show', todo_list %></td>
-          <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
-          <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= link_to 'New Todo list', new_todo_list_path %>
-</div>
+<br>
+
+<%= link_to 'New Todo list', new_todo_list_path %>
