@@ -15,6 +15,11 @@
     <%= image_tag "dev-logo.svg" %>
   </header>
 
+  <% flash.each do |type,message| %>
+  <div class="alert flash <%= type %>">
+    <%= message %>
+  </div>
+  <% end %>
 <%= yield %>
 
 
