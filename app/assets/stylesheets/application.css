@@ -21,7 +21,6 @@ main {
   width: 900px;
   margin: 0 auto;
   background: #fcf6e4;
-  padding: 0 25px;
 }
 
 header img {
@@ -34,6 +33,5 @@ header img {
 footer {
   text-align: center;
   height: 20px;
-  width: 100%;
   background: rgb(255, 255, 255);
 }
